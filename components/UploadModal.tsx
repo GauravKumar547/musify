@@ -9,6 +9,7 @@ import useUser from "@/hooks/useUser";
 import uniqid from "uniqid";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
+import { CircleLoader } from "react-spinners";
 const UploadModal = () => {
     const [isLoading, setIsLoading] = useState(false);
     const uploadModal = useUploadModal();
@@ -34,7 +35,7 @@ const UploadModal = () => {
             setIsLoading(true);
             const imageFile = values.image?.[0];
             const songFile = values.song?.[0];
-            if (!imageFile || !songFile || !user) {
+            if (!imageFile || !songFile || !user || !values.title || !values.author) {
                 toast.error("Missing fields");
                 setIsLoading(false);
                 return;
@@ -87,7 +88,7 @@ const UploadModal = () => {
             description="Upload an mp3 file"
             isOpen={uploadModal.isOpen}
             onChange={onChange}>
-            <form className="flex flex-col gap-y-4" onSubmit={handleSubmit(onSubmit)}>
+            <form className="flex flex-col gap-y-4" onSubmit={handleSubmit(onSubmit, onSubmit)}>
                 <Input
                     id="title"
                     disabled={isLoading}
@@ -121,7 +122,7 @@ const UploadModal = () => {
                     />
                 </div>
                 <Button disabled={isLoading} type="submit">
-                    Create
+                    {isLoading ? <CircleLoader /> : "Create"}
                 </Button>
             </form>
         </Modal>

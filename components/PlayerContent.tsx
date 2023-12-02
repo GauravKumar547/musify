@@ -43,7 +43,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
         }
         player.setId(prevSong);
     };
-    const [play, { pause, sound }] = useSound(songUrl, {
+    const [play, { pause, sound, stop }] = useSound(songUrl, {
         volume: volume,
         onplay: () => setIsPlaying(true),
         onended: () => {
@@ -54,11 +54,17 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
         format: ["mp3"],
     });
     useEffect(() => {
+        if (player.activeStop != undefined) {
+            player.activeStop();
+        }
         sound?.play();
+        player.setActiveStop(stop);
     }, [sound]);
+
     const handlePlay = () => {
         if (!isPlaying) {
             play();
+            player.setActiveStop(stop);
         } else {
             pause();
         }

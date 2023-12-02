@@ -1,7 +1,9 @@
 "use client";
 import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
+import PlayButton from "@/components/PlayButton";
 import useOnPlay from "@/hooks/useOnPlay";
+import usePlayer from "@/hooks/usePlayer";
 import { Song } from "@/types";
 import React from "react";
 interface SearchContentProps {
@@ -9,6 +11,7 @@ interface SearchContentProps {
 }
 const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
     const onPlay = useOnPlay(songs);
+    const player = usePlayer();
     if (songs.length === 0) {
         return (
             <div className="flex flex-col gap-y-2 w-full px-6 text-neutral-400">
@@ -19,11 +22,12 @@ const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
     return (
         <div className="flex flex-col gap-y-2 w-full px-6">
             {songs.map((song) => (
-                <div key={song.id} className="flex items-center gap-x-4 w-full">
+                <div key={song.id} className="flex group items-center gap-x-4 w-full">
                     <div className="flex-1">
                         <MediaItem data={song} onClick={(id: string) => onPlay(id)} />
                     </div>
-                    <LikeButton songId={song.id} />
+                    {player.activeId != song.id ? <LikeButton songId={song.id} /> : null}
+                    {player.activeId != song.id ? <PlayButton /> : null}
                 </div>
             ))}
         </div>
