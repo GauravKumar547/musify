@@ -106,7 +106,7 @@ const UploadModal = () => {
                         id="song"
                         type="file"
                         disabled={isLoading}
-                        accept=".mp3"
+                        accept="audio/mp3"
                         {...register("song", { required: true })}
                     />
                 </div>

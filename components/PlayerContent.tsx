@@ -55,9 +55,6 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
     });
     useEffect(() => {
         sound?.play();
-        return () => {
-            sound?.unload();
-        };
     }, [sound]);
     const handlePlay = () => {
         if (!isPlaying) {
