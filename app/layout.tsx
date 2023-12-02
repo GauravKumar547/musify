@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
@@ -9,7 +10,6 @@ import ToasterProvider from "@/providers/ToasterProvider";
 import getSongsByUserdId from "@/actions/getSongsByUserId";
 import Player from "@/components/Player";
 import getActiveProductsWithPrices from "@/actions/getActiveProductsWithPrices";
-import { useState } from "react";
 import ShowMenuProvider from "@/providers/ShowMenuProvider";
 
 const font = Figtree({ subsets: ["latin"] });
