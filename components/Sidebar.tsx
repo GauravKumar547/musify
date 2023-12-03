@@ -15,6 +15,7 @@ import usePlayer from "@/hooks/usePlayer";
 import { twMerge } from "tailwind-merge";
 import { SidebarContext } from "@/providers/ShowMenuProvider";
 import { GiTireIronCross } from "react-icons/gi";
+import Image from "next/image";
 
 const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
     const pathname = usePathname();
@@ -36,10 +37,22 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
                 )}>
                 <button
                     onClick={() => setShowMenu(!showMenu)}
-                    className="rounded-full p-2 bg-transparent absolute right-2.5 top-7 flex items-center justify-center hover:opacity-75 transition">
+                    className="rounded-full p-2 bg-transparent absolute md:hidden right-2.5 top-6 flex items-center justify-center hover:opacity-75 transition">
                     <GiTireIronCross className="text-white" size={20} />
                 </button>
                 <Box className="max-md:rounded-b-none max-md:pt-2">
+                    <div className="h-12 flex items-center gap-1 p-2">
+                        <Image
+                            src="/images/Logo.jpg"
+                            width={50}
+                            height={50}
+                            alt="Logo"
+                            className="rounded-full w-10 h-10 border border-neutral-700"
+                        />
+                        <div className="font-bold text-2xl bg-gradient-to-tr from-emerald-800 to-neutral-800 bg-clip-text text-transparent">
+                            Musify
+                        </div>
+                    </div>
                     <div className="flex flex-col gap-y-4 px-5 py-4">
                         {routes.map((item) => (
                             <SidebarItem key={item.label} {...item}></SidebarItem>

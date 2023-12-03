@@ -11,6 +11,7 @@ import getSongsByUserdId from "@/actions/getSongsByUserId";
 import Player from "@/components/Player";
 import getActiveProductsWithPrices from "@/actions/getActiveProductsWithPrices";
 import ShowMenuProvider from "@/providers/ShowMenuProvider";
+import Image from "next/image";
 
 const font = Figtree({ subsets: ["latin"] });
 
