@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Musify - Your Personalized Music Experience 🎶
+
+Musify is a web application that brings the joy of music to your fingertips. Developed by a passionate Full Stack Developer, this project aims to deliver a Spotify-inspired experience with a unique touch. Explore, play, and customize your music library effortlessly!
+
+## Features
+
+- **Play and Discover:** Stream your favorite tracks and discover new music seamlessly.
+  
+- **Subscription Model:** Enjoy premium features with our subscription plan for an enhanced Musify experience.
+  
+- **Add Songs:** Personalize your library by adding your preferred tracks with just a click.
+  
+## Tech Stack
+
+Musify is powered by cutting-edge technologies:
+
+- **Next.js:** React-based framework for a fast and efficient web application.
+  
+- **TypeScript:** Enhance code quality and maintainability with static typing.
+  
+- **Tailwind CSS:** Rapidly build a responsive and sleek user interface.
+  
+- **Supabase:** Leverage the power of a scalable and real-time database for a seamless user experience.
 
 ## Getting Started
 
-First, run the development server:
+To run Musify locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/GauravKumar547/musify.git
+   cd musify
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Open Your Browser:**
+   Visit [http://localhost:3000](http://localhost:3000) to experience Musify!
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+Musify is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute this project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Happy listening! 🎉🎧
