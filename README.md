@@ -21,6 +21,8 @@ Musify is powered by cutting-edge technologies:
 - **Tailwind CSS:** Rapidly build a responsive and sleek user interface.
   
 - **Supabase:** Leverage the power of a scalable and real-time database for a seamless user experience.
+  
+- **Stripe:** Provide the Feature for subscribing and playing via stripe.
 
 ## Getting Started
 
