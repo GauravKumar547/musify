@@ -73,12 +73,18 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({ products }) => {
                         }`}</Button>
                     ));
                 })}
+                <div className="text-center text-xs opacity-60">
+                    <b>NOTE: </b>
+                    <span className="opacity-70">
+                        You won't be charged and only stripe test cards will work.
+                    </span>
+                </div>
             </div>
         );
     }
-    if (subscription) {
-        content = <div className="text-center">Already Subscribed</div>;
-    }
+    // if (subscription) {
+    //     content = <div className="text-center">Already Subscribed</div>;
+    // }
     return (
         <Modal
             title="Only for premium users"
